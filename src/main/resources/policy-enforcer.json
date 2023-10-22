@@ -1,0 +1,18 @@
+{
+  "realm": "quickstart",
+  "auth-server-url": "http://localhost:8080",
+  "resource": "authz-servlet",
+  "credentials": {
+    "secret": "secret"
+  },
+  "paths": [
+    {
+      "path": "/category",
+      "enforcement-mode": "DISABLED"
+    },
+    {
+      "path": "/post/*",
+      "enforcement-mode": "DISABLED"
+    }
+  ]
+}
