@@ -26,16 +26,15 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
-import org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter;
+import org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
 import org.springframework.web.filter.CorsFilter;
-import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 
 /**
  * OAuth resource configuration.
@@ -63,13 +62,13 @@ public class OAuth2ResourceServerSecurityConfiguration {
 						.requestMatchers(mvc.pattern( "/post/**")).permitAll()
 						.anyRequest().authenticated()
 				)
-				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
+				.oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()))
 				.addFilterAfter(createPolicyEnforcerFilter(), BearerTokenAuthenticationFilter.class);
 		return http.build();
 	}
 
 	private ServletPolicyEnforcerFilter createPolicyEnforcerFilter() {
-		ServletPolicyEnforcerFilter servletPolicyEnforcerFilter = new ServletPolicyEnforcerFilter(new ConfigurationResolver() {
+		return new ServletPolicyEnforcerFilter(new ConfigurationResolver() {
 			@Override
 			public PolicyEnforcerConfig resolve(HttpRequest request) {
 				try {
@@ -79,7 +78,6 @@ public class OAuth2ResourceServerSecurityConfiguration {
 				}
 			}
 		});
-		return servletPolicyEnforcerFilter;
 	}
 
 	@Bean
