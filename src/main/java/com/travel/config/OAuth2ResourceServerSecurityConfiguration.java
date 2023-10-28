@@ -81,7 +81,7 @@ public class OAuth2ResourceServerSecurityConfiguration {
 	}
 
 	@Bean
-	JwtDecoder jwtDecoder() {
+	public JwtDecoder jwtDecoder() {
 		return NimbusJwtDecoder.withJwkSetUri(this.jwkSetUri).build();
 	}
 
