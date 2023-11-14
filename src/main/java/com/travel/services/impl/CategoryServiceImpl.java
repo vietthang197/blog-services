@@ -11,6 +11,7 @@ import com.travel.services.vm.CreateCategoryVM;
 import com.travel.services.vm.UpdateCategoryVM;
 import jakarta.transaction.Transactional;
 import lombok.extern.log4j.Log4j2;
+import org.keycloak.authorization.client.AuthzClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

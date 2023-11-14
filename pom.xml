@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.travel</groupId>
-    <artifactId>my-travel-api</artifactId>
+    <artifactId>travel-services</artifactId>
     <version>1.0</version>
-    <name>my-travel-api</name>
-    <description>my-travel-api</description>
+    <name>travel-services</name>
+    <description>travel-services</description>
     <properties>
         <java.version>21</java.version>
         <lombok.version>1.18.30</lombok.version>
@@ -189,8 +189,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>11</source> <!-- depending on your project -->
-                    <target>11</target> <!-- depending on your project -->
+                    <source>21</source> <!-- depending on your project -->
+                    <target>21</target> <!-- depending on your project -->
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.mapstruct</groupId>

@@ -1,9 +1,9 @@
 {
-  "realm": "quickstart",
+  "realm": "travel",
   "auth-server-url": "http://localhost:8080",
-  "resource": "authz-servlet",
+  "resource": "travel-services",
   "credentials": {
-    "secret": "secret"
+    "secret": "3de3HoQaQtkYA5kE464UDTRa45wRiJdi"
   },
   "paths": [
     {

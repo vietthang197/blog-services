@@ -61,8 +61,8 @@ public class Post extends SuperEntity implements Serializable {
     @FullTextField(analyzer = "customAnalyzer")
     private String slug;
 
-    @Column(length = 1000)
-    private String avatarUrl;
+    @Column(length = 200)
+    private String avatarId;
 
     // Nội dung bài viết
     @Lob

@@ -1,0 +1,8 @@
+{
+  "realm": "travel",
+  "auth-server-url": "http://localhost:8080",
+  "resource": "travel-services",
+  "credentials": {
+    "secret": "3de3HoQaQtkYA5kE464UDTRa45wRiJdi"
+  }
+}
