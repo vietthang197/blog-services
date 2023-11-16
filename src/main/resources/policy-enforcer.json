@@ -1,7 +1,7 @@
 {
-  "realm": "travel",
+  "realm": "ecommerce",
   "auth-server-url": "http://localhost:8080",
-  "resource": "travel-services",
+  "resource": "blog-services",
   "credentials": {
     "secret": "3de3HoQaQtkYA5kE464UDTRa45wRiJdi"
   },

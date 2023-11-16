@@ -20,7 +20,7 @@
 			<AppenderRef ref="api"/>
 			<AppenderRef ref="Console"/>
 		</Root>
-		<logger name="com.travel" level="INFO" additivity="false">
+		<logger name="com.blog" level="INFO" additivity="false">
 			<appender-ref ref="api" />
 			<appender-ref ref="Console" />
 		</logger>
