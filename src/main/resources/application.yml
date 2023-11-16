@@ -36,7 +36,7 @@ spring:
               configurer: com.blog.config.MyAnalysisConfigurer
             directory:
               type: local-filesystem
-              root: D:/apache_lucene/blog-services
+              root: D:/apache_lucene/ecommerce
     show-sql: true
     hibernate:
       ddl-auto: update
