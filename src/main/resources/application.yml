@@ -9,7 +9,7 @@ spring:
       pool-name: Hikari
       validation-timeout: 1000
   application:
-    name: VietTravel
+    name: Blog-Services
   jpa:
     open-in-view: false
     properties:
@@ -33,10 +33,10 @@ spring:
         search:
           backend:
             analysis:
-              configurer: com.travel.config.MyAnalysisConfigurer
+              configurer: com.blog.config.MyAnalysisConfigurer
             directory:
               type: local-filesystem
-              root: D:/apache_lucene/mytravelapi
+              root: D:/apache_lucene/blog-services
     show-sql: true
     hibernate:
       ddl-auto: update
@@ -44,8 +44,6 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:8080/realms/travel/protocol/openid-connect/certs
-#application
-file-management.root-path: /app
+          jwk-set-uri: http://localhost:8080/realms/ecommerce/protocol/openid-connect/certs
 server:
   port: 8090
